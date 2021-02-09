@@ -38,6 +38,10 @@ let transitionTable = {
     value = document.getElementById("input").value
     let currentState = states.q0
     for (let i = 0; i < value.length; i++) {
+      if (value[i] != alphabet[0] && value[i] != alphabet[1]) {
+        alert("Invalid value")
+        return
+      }
       currentState = transitionTable[currentState][value[i]]
     }
     console.log(currentState == finalState[currentState])

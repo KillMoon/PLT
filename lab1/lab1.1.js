@@ -1,43 +1,45 @@
-const states = {q0: 'q0', q1: 'q1', q2: 'q2', q3: 'q3', q4: 'q4', q5: 'q5'}
-const totalStates = 6
-const alphabetSize = 2
-const alphabet = ['0', '1']
-const finalState = {q0: 'q0', q1: 'q1', q2: 'q2', q3: 'q3', q4: 'q4'}
+const statesNKA = {q0: 'q0', q1: 'q1', q2: 'q2', q3: 'q3', q4: 'q4', q5: 'q5'}
+const alphabetNKA = ['0', '1']
+const finalStateNKA = {q0: 'q0', q1: 'q1', q2: 'q2', q3: 'q3', q4: 'q4'}
 
-let transitionTable = {
-    [states.q0]: {
-      [alphabet[0]]: states.q1,
-      [alphabet[1]]: states.q0
+let transitionTableNKA = {
+    [statesNKA.q0]: {
+      [alphabetNKA[0]]: statesNKA.q1,
+      [alphabetNKA[1]]: statesNKA.q0
     },
-    [states.q1]: {
-      [alphabet[0]]: states.q2,
-      [alphabet[1]]: states.q0
+    [statesNKA.q1]: {
+      [alphabetNKA[0]]: statesNKA.q2,
+      [alphabetNKA[1]]: statesNKA.q0
     },
-    [states.q2]: {
-      [alphabet[0]]: states.q3,
-      [alphabet[1]]: states.q0
+    [statesNKA.q2]: {
+      [alphabetNKA[0]]: statesNKA.q3,
+      [alphabetNKA[1]]: statesNKA.q0
     },
-    [states.q3]: {
-      [alphabet[0]]: states.q4,
-      [alphabet[1]]: states.q0
+    [statesNKA.q3]: {
+      [alphabetNKA[0]]: statesNKA.q4,
+      [alphabetNKA[1]]: statesNKA.q0
     },
-    [states.q4]: {
-      [alphabet[0]]: states.q5,
-      [alphabet[1]]: states.q0
+    [statesNKA.q4]: {
+      [alphabetNKA[0]]: statesNKA.q5,
+      [alphabetNKA[1]]: statesNKA.q0
     },
-    [states.q5]: {
-      [alphabet[0]]: states.q5,
-      [alphabet[1]]: states.q5
+    [statesNKA.q5]: {
+      [alphabetNKA[0]]: statesNKA.q5,
+      [alphabetNKA[1]]: statesNKA.q5
     },
   }
-  function dfa() {
-    value = document.getElementById("input").value
-    let currentState = states.q0
+  function nfa() {
+    value = document.getElementById("inputNKA").value
+    let currentState = statesNKA.q0
     for (let i = 0; i < value.length; i++) {
-      currentState = transitionTable[currentState][value[i]]
+      if (value[i] != alphabetNKA[0] && value[i] != alphabetNKA[1]) {
+        alert("Invalid value")
+        return
+      }
+      currentState = transitionTableNKA[currentState][value[i]]
     }
-    console.log(currentState == finalState[currentState])
-    if (currentState == finalState[currentState]) { 
+    console.log(currentState == finalStateNKA[currentState])
+    if (currentState == finalStateNKA[currentState]) { 
         console.log(1)
         alert('Accept')
     } else {
