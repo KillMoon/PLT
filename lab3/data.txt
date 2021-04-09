@@ -1,0 +1,25 @@
+Q P G F
+a b c
+Z a b
+Q
+Z
+F
+F
+Q a Z Q aaZ
+Q a Z Q aaaZ
+Q a a Q aaa
+Q a a Q aaaa
+Q b Z Q bZ
+Q b b Q bb
+Q b a Q e
+Q e Z F Z
+Q a b P e
+Q c Z Q Z
+Q c a Q a
+Q c b Q b
+P e Z Q aaZ
+P e Z Q aZ
+P e b Q e
+P e b G e
+G e Z Q aZ
+G e b Q e
